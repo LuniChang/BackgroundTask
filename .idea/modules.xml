@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BackgroundTask.iml" filepath="$PROJECT_DIR$/BackgroundTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/applog/applog.iml" filepath="$PROJECT_DIR$/applog/applog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backgroundTask/backgroundTask.iml" filepath="$PROJECT_DIR$/backgroundTask/backgroundTask.iml" />
+    </modules>
+  </component>
+</project>

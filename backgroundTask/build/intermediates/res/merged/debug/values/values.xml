@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="gray">#FF2d2d2d</color>
+    <color name="gray_low">#FF484848</color>
+    <color name="orange">#ffa500</color>
+    <color name="red">#ff0000</color>
+    <color name="sign_red">#FF0033</color>
+    <color name="theme_bg_color">#FFFEFEFE</color>
+    <color name="theme_bg_color_half">#FF777777</color>
+    <color name="theme_color">#FF3caef4</color>
+    <color name="theme_color_dark">#ff1366c4</color>
+    <color name="theme_color_dark_half">#881366c4</color>
+    <color name="theme_color_half">#883caef4</color>
+    <color name="theme_color_opposite">#FFf8c27a</color>
+    <color name="theme_color_opposite2">#FFffb54c</color>
+    <color name="theme_color_opposite_dark">#FFe0813d</color>
+    <color name="theme_color_opposite_dark2">#FFe1760c</color>
+    <color name="theme_color_opposite_dark_half">#88e2770f</color>
+    <color name="theme_color_opposite_dark_half2">#88e1760c</color>
+    <color name="theme_color_opposite_half">#88f8c27a</color>
+    <color name="theme_color_opposite_half2">#88ffb54c</color>
+    <color name="theme_color_opposite_part">#FFFDB34A</color>
+    <color name="theme_color_opposite_part_half">#88FDB34A</color>
+    <color name="theme_color_other">#FFFFFFCC</color>
+    <color name="theme_color_other_half">#88FFFFCC</color>
+    <color name="theme_line_color">#FFBBBBBB</color>
+    <color name="theme_text_color">#FF111111</color>
+    <color name="theme_text_hint_color">#FF666666</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_haft">#88000000</color>
+    <color name="transparent_haft_white">#88FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#ffff00</color>
+    <drawable name="green">#16a085</drawable>
+    <drawable name="translucent_darkgray">#88232323</drawable>
+    <drawable name="transparent">#00000000</drawable>
+    <string name="app_name">BackgroundTask</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

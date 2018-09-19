@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bg_corner_theme_color.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\shape_bg_corner_theme_color.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_corner_theme.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\selector_button_corner_theme.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_button_corner_theme_color_down.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\shape_button_corner_theme_color_down.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_corner_theme_opposed.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\selector_button_corner_theme_opposed.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_button_corner_theme_color_opposed_down.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\shape_button_corner_theme_color_opposed_down.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_button_corner_theme_color_up.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\shape_button_corner_theme_color_up.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_button_corner_theme_color_opposed_up.xml",
+        "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable\\shape_button_corner_theme_color_opposed_up.xml"
+    }
+]
