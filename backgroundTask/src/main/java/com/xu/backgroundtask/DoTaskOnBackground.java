@@ -1,4 +1,4 @@
-﻿package com.xu.backgroundtask;
+package com.xu.backgroundtask;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -290,11 +290,11 @@ public abstract class DoTaskOnBackground {
         }
 
 
-            try {
-                taskQueue.remove(this);
-            } catch (Exception e) {
-                appLog.e(DoTaskOnBackground.class.getName() + e.toString());
-            }
+        try {
+            taskQueue.remove(this);
+        } catch (Exception e) {
+            appLog.e(DoTaskOnBackground.class.getName() + e.toString());
+        }
 
 
     }

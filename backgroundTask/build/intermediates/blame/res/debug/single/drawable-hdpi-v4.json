@@ -2,5 +2,9 @@
     {
         "merged": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
         "source": "E:\\AndroidStudioProjects\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\android_proj\\BackgroundTask\\backgroundTask\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "G:\\android_proj\\BackgroundTask\\backgroundTask\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     }
 ]
