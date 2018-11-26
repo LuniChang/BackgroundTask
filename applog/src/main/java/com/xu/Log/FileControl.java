@@ -1,6 +1,7 @@
 package com.xu.Log;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,9 +9,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -21,7 +25,7 @@ import android.util.Log;
  * Created by xq on 2015/1/6.
  */
 public class FileControl {
-
+	public static final String TAG="com.xu.app.log";
 	public static boolean copyFile(String srcpath, String outpath) {
 		try {
 			boolean isSameFile=srcpath.equals(outpath);
@@ -56,7 +60,7 @@ public class FileControl {
 			
 			return true;
 		} catch (IOException e) {
-			Log.e("filecontrol", e.toString());
+			Log.e(TAG, e.toString());
 			return false;
 		}
 	}
@@ -74,7 +78,7 @@ public class FileControl {
 			fout.close();
 			return true;
 		} catch (IOException e) {
-			Log.e("filecontrol","IOException" + e.toString());
+			Log.e(TAG,"IOException" + e.toString());
 			return false;
 		}
 	}
@@ -91,7 +95,7 @@ public class FileControl {
 			fout.close();
 			return true;
 		} catch (IOException e) {
-			Log.e("filecontrol","IOException:saveByteToFile" + e.toString());
+			Log.e(TAG,"IOException:saveByteToFile" + e.toString());
 			return false;
 		}
 	}
@@ -126,7 +130,7 @@ public class FileControl {
 			fin.close();
 			return str;
 		} catch (IOException e) {
-			Log.e("XU", "IOException" + e.toString());
+			Log.e(TAG, "IOException" + e.toString());
 			return null;
 		}
 
@@ -267,7 +271,7 @@ public class FileControl {
 	 * 拷贝项目assets下的文件
 	 * 
 	 * @param context
-	 * @param assetFilename
+	 * @param assetsFilename
 	 *            assets的文件名
 	 * @param filePath
 	 *            保存到手机的文件路径
@@ -335,36 +339,35 @@ public class FileControl {
 		if (sdCardExist) {
 			sdDir = Environment.getExternalStorageDirectory();
 		} else {
-			return "/mnt/sdcard/xu/";
+			return "/mnt/sdcard/"+TAG+"/";
 		}
 
-		return sdDir.toString() + "/xu/";
+		return sdDir.toString() + "/"+TAG+"/";
 	}
 
-	private static String setting_params[] = null;
+	private static Map<String,String> confMap = null;
 
-	public static String getAppSettingParam(int index) {
-		if (setting_params == null) {
+	public static String getAppSettingParam(String key) {
+		if (confMap == null) {
 			String settingStr = FileControl.loadFileString(getAPPRootPath()
-					+ "setting.txt");
+					+ "config");
 			if (settingStr != null && !"".equals(settingStr)) {
-				setting_params = settingStr.split(",");
+				confMap = decodeConfigFromString(settingStr);
 			}
 		}
-		if (setting_params != null && setting_params.length > index
-				&& index > -1) {
-			return setting_params[index];
+		if (confMap != null ) {
+			return confMap.get(key);
 		}
 
 		return null;
 	}
 
 	public static void  initAppSettingParam(Context context){
-			if(setting_params==null){
-				String settingStr=FileControl.loadFileString(getAPPRootPath()+"setting.txt");
+			if(confMap ==null){
+				String settingStr=FileControl.loadFileString(getAPPRootPath()+"config");
 				if(settingStr==null){
 					try{
-						InputStream inputStream = context.getResources().getAssets().open("setting.txt");
+						InputStream inputStream = context.getResources().getAssets().open("config");
 						InputStreamReader inputStreamReader=new InputStreamReader(inputStream, "UTF-8");
 					
 					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -380,17 +383,43 @@ public class FileControl {
 					inputStream.close();
 					
 					} catch (IOException e) {
-				        	Log.e("XU","initAppSettingParam:" + e.toString());
+				        	Log.e(TAG,"initAppSettingParam:" + e.toString());
 				     }
 					
 				}
 				
 				if(settingStr!=null&&!"".equals(settingStr)){
-					setting_params= settingStr.split(",");
+					confMap = decodeConfigFromString(settingStr);
+
 				}
 			}
 			
 		}
+
+	public static Map decodeConfigFromString(String str) {
+		Map map= new HashMap<String, String>();
+		try {
+			InputStreamReader inputStreamReader=new InputStreamReader(new ByteArrayInputStream(str.getBytes("UTF-8")));
+			BufferedReader br = new BufferedReader(inputStreamReader);
+			String line;
+			while ( (line = br.readLine()) != null ) {
+				if(!line.trim().equals("")&&line.charAt(0)!='#'){
+
+					int eqIndex=line.indexOf("=");
+					String key=line.substring(0,eqIndex);
+
+					String value=line.substring(eqIndex+1,line.length());
+
+				}
+			}
+		} catch (IOException e) {
+			Log.e("XU","decodeConfigFromString:" + e.toString());
+		}
+
+
+		return map;
+	}
+
 
 	/* Checks if external storage is available for read and write */
 	public static boolean isExternalStorageWritable() {
